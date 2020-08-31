@@ -1,5 +1,8 @@
-# Craftos Game
-Craftos | 3D Place &amp; Delete Blocks in-browser! 
+# Craftos: a Cyberpunk block world!
+Your land to explore, build, 
+A Vanilla JS Original
+
+![Gameplay Image](imgs/craftos.PNG)
 
 ## Installation
 Using [Visual Studio Code](https://code.visualstudio.com/) and the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) 
@@ -13,8 +16,10 @@ extension!
 
 ## Usage
 Craftos is free, download the zip and start in seconds.
-Absolutely open source - 
-Pull Requests Open
+Friendly open source - 
+be creative, have fun. 
 
-## Updates
-Current Build: Prototype One
+## Build
+Current: Prototype One
+
+Upcoming: TBD
