@@ -1,6 +1,5 @@
 # Craftos Game
 Craftos | 3D Place &amp; Delete Blocks in-browser! 
-Placing blocks, for free. 
 
 ## Installation
 Using [Visual Studio Code](https://code.visualstudio.com/) and the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) 
