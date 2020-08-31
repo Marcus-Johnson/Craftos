@@ -17,6 +17,48 @@
         var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight,
                                                 0.1, 1000);
         
+        function Block(x, y, z){
+            this.x =  x; 
+            this.y = y;
+            this.z = z; 
+
+            this.display = function(){
+                var blockBox = new THREE.BoxBufferGeometry(5, 5, 5);
+                var blockMesh = new THREE.MeshBasicMaterial({color : 0x00ff00});
+                var block = new THREE.Mesh(blockBox, blockMesh);
+                scene.add(block);
+                block.position.x = this.x; 
+                block.position.y = this.y; 
+                block.position.z = this.z; 
+                var edges = new THREE.EdgesGeometry(blockBox);
+                var line = new THREE.LineSegments(edges, 
+                                                new THREE.LineBasicMaterial({color : 0x000000}));
+                scene.add(line);
+                line.position.x = this.x; 
+                line.position.y = this.y;
+                line.position.z = this.z; 
+            }
+        }
+        
+        var blocks = []; 
+        var xoff = 0; 
+        var zoff = 0; 
+        var inc = 0.1; 
+        var amplitude = 100; 
+        for(var x=0; x<20; x++){
+            xoff = 0; 
+            for(var z=0; z < 20; z++){
+                var v = Math.round(noise.perlin2(xoff, zoff) * amplitude / 5) * 5;
+                blocks.push(new Block(x=5, v, z*5));
+                xoff = xoff + inc; 
+            }
+            zoff = zoff + inc; 
+        }
+
+        for(var i=0; i<blocks.length; i++){
+            blocks[i].display();
+        }
+
         function update(){
 
         }
@@ -37,7 +79,7 @@
             render();
         }
  
-
+        GameLoop();
     </script>
 </body>
 <footer>
