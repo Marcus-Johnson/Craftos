@@ -9,9 +9,10 @@
 <body>
     <script src="js/three.js"></script>
     <script src="js/perlin.js"></script>
+    <script src="js/PointerLockControls.js"></script>
     <script type="text/javascript">
         var scene = new THREE.Scene();
-        var rederer = new Three.WebGLRenderer();
+        var rederer = new THREE.WebGLRenderer();
         rederer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(rederer.domElement);
         var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight,
@@ -28,14 +29,14 @@
                 var block = new THREE.Mesh(blockBox, blockMesh);
                 scene.add(block);
                 block.position.x = this.x; 
-                block.position.y = this.y; 
+                block.position.y = this.y - 10; 
                 block.position.z = this.z; 
                 var edges = new THREE.EdgesGeometry(blockBox);
                 var line = new THREE.LineSegments(edges, 
                                                 new THREE.LineBasicMaterial({color : 0x000000}));
                 scene.add(line);
                 line.position.x = this.x; 
-                line.position.y = this.y;
+                line.position.y = this.y - 10;
                 line.position.z = this.z; 
             }
         }
@@ -58,6 +59,17 @@
         for(var i=0; i<blocks.length; i++){
             blocks[i].display();
         }
+
+        var controls = new THREE.PointerLockControls(camera, document.body);
+        document.body.addEventListener("click", function() {
+            controls.lock();
+        });
+        controls.addEventListener("lock", function() {
+            
+        });
+        controls.addEventListener("unlock", function() {
+ 
+        });
 
         function update(){
 
@@ -82,6 +94,4 @@
         GameLoop();
     </script>
 </body>
-<footer>
-</footer>
 </html>
