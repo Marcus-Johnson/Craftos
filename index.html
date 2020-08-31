@@ -7,16 +7,18 @@
     <title>Craftos | Prototype One</title>
 </head>
 <body>
+    <button id = "autojumpbutton" onclick = "toggleAutoJump()"><h2>Auto-Jump : On</h2></button>
+    <p>Prototype One</p>
     <script src="js/three.js"></script>
     <script src="js/perlin.js"></script>
     <script src="js/PointerLockControls.js"></script>
+
     <script type="text/javascript">
-        <button id = "autojumpbutton" onclick = "toggleAutoJump()"><h2>AutoJump : On</h2></button>
      noise.seed(Math.random());
 
      var scene = new THREE.Scene();
      scene.background = new THREE.Color(0x00ffff);
-    var renderer = new THREE.WebGLRenderer();
+    var renderer = new THREE.WebGLRenderer();   
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
     var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -34,7 +36,7 @@
     
     var loader = new THREE.TextureLoader();
     var materialArray = [
-    
+
         new THREE.MeshBasicMaterial({map : loader.load("texture/side4.jpg")}),
         new THREE.MeshBasicMaterial({map : loader.load("texture/side1.jpg")}),
         new THREE.MeshBasicMaterial({map : loader.load("texture/top.jpg")}),
@@ -43,6 +45,7 @@
         new THREE.MeshBasicMaterial({map : loader.load("texture/side3.jpg")}),
 
     ];
+
 
     function Block(x, y, z){
         this.x = x;
@@ -61,7 +64,7 @@
             this.mesh.position.z = this.z;
 
             var edges = new THREE.EdgesGeometry(blockBox);
-            this.line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({color : 0x000000, linewidth : 4}));
+            this.line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({color : 0x00ff00, linewidth : 4}));
             scene.add(this.line);
             this.line.position.x = this.x;
             this.line.position.y = this.y - 10;
