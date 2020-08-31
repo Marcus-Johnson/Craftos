@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Craftos|Prototype One</title>
+</head>
+<body>
+    <script src="js/three.js"></script>
+    <script src="js/perlin.js"></script>
+    <script type="text/javascript">
+        var scene = new THREE.Scene();
+        var rederer = new Three.WebGLRenderer();
+        rederer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(rederer.domElement);
+        var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight,
+                                                0.1, 1000);
+        
+        function update(){
+
+        }
+
+        window.addEventListener("resize", function(){
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+        });
+
+        function render(){
+            render.render(scene, camera);
+        }
+
+        function GameLoop(){
+            requestAnimationFrame(GameLoop);
+            update();
+            render();
+        }
+ 
+
+    </script>
+</body>
+<footer>
+</footer>
+</html>
