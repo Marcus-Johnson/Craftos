@@ -1,5 +1,6 @@
 # Craftos: a Cyberpunk block world!
-Your land to explore, build, 
+Your land to explore, build, and destroy.
+Implement vast model structures with obj dex.
 A Vanilla JS Original
 
 ![Gameplay Image](imgs/craftos.PNG)
