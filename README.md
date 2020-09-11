@@ -3,7 +3,7 @@ Your land to explore, build, and destroy.
 Implement vast model structures with obj dex.
 A Vanilla JS Original
 
-![Gameplay Image](imgs/craftos.PNG)
+![Gameplay Image](imgs/terrain_generation_vanilla_js.PNG)
 
 ## Installation
 Using [Visual Studio Code](https://code.visualstudio.com/) and the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) 
