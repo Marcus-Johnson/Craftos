@@ -19,8 +19,3 @@ extension!
 Craftos is free, download the zip and start in seconds.
 Friendly open source - 
 be creative, have fun. 
-
-## Build
-Current: Prototype One
-
-Upcoming: TBD
